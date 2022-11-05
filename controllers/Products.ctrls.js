@@ -51,3 +51,10 @@ const destory = (req, res) => {
             })
         })
 }
+
+module.exports = {
+    index,
+    create,
+    update,
+    destory
+}

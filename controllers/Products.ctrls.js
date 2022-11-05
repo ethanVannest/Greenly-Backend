@@ -21,3 +21,20 @@ const create = (req, res) => {
         return res.status(200).json(createdItems)
     })
 }
+
+const update = (req, res) => {
+    db.Products.findByIdAndUpdate(
+        req.params.id,
+        {
+            $set: req.body
+        },
+        { new: true }, 
+        (error, updatedProducts) => {
+            if (error)
+            return res.status(400).json({
+                error: error.message
+            })
+            return res.status(200).json(updatedProducts)
+        }
+    )
+}

@@ -1,4 +1,6 @@
-products = [
+const { products } = require("../controllers/index.ctrls")
+
+const productItems = [
     {
         name: 'PS5',
         price: 500, 
@@ -7,3 +9,4 @@ products = [
         image: 'https://media.direct.playstation.com/is/image/sierialto/PS5-front-with-dualsense'
     }
 ]
+module.exports = products

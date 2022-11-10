@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
         required: true
     }, 
     price: {
-        type: Integer,
+        type: Number,
         required: true    
     }, 
     description:  {
@@ -14,7 +14,7 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     stocked: {
-        type:Boolean, 
+        type: Number, 
         required: true
     },
     image: {
@@ -23,6 +23,6 @@ const productSchema = new mongoose.Schema({
     }
 })
 
-const Products = mongoose.model( 'Products', productSchema )
+const Product = mongoose.model( 'products', productSchema )
 
-module.exports = Products 
+module.exports = Product

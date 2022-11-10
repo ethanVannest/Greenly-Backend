@@ -6,7 +6,7 @@ const cartSchema = new mongoose.Schema({
         required: true
     },
     price: {
-        type: Integer,
+        type: Number,
         required: true
     }, 
     description: {
@@ -14,7 +14,7 @@ const cartSchema = new mongoose.Schema({
         required: true
     },
     stocked: {
-        type:Boolean,
+        type: Number,
         required: true
     }, 
     image: {

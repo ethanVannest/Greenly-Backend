@@ -1,17 +1,27 @@
-const db = require('../models')
+const Product = require('../models/Products')
+const db = require('../models/Products')
 
-const index = (req, res) => {
-    db.Products.find({}, (error, items) => {
-        if(error) 
-        return res.status(400).json({
-            error: error.message
-        })
-        return res.status(200).json({
-            items
-        })
-    })
+
+const index = async (req, res) => {
+    try {
+        const products = await Product.find({});
+
+        res.json(products)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({message: 'Error'})
+    }
 }
+const show = async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
 
+        res.json(product)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({message: 'Error'})
+    }
+}
 const create = (req, res) => {
     db.Products.create(req.body, (error, createdItems) => {
         if (error) 
@@ -54,6 +64,7 @@ const destory = (req, res) => {
 
 module.exports = {
     index,
+    show,
     create,
     update,
     destory

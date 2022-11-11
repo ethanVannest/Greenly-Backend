@@ -1,21 +1,23 @@
 require('dotenv').config();
 
-const productData = require('./data/seederData')
+const productItems = require('./data/seederData')
 const connectDB = require('./config/db.connection.js')
 const Product = require('./models/Products')
 
-const importData = async () => {
+connectDB();
+
+const importData = async() => {
     try {
+        await Product.insertMany(productItems);
 
-        await Product.insertMany(productData)
+        console.log("Seed complete")
 
-        console.log('Data Imported')
+        process.exit();
 
-        process.exit()
-    } catch(error) {
-        console.log('Err with Data Import')
-        console.log(error)
-        process.exit(1)
+    } catch (error) {
+        console.log('Failed Data Seed')
+        // console.log(error)
+        process.exit(1);
     }
 }
 

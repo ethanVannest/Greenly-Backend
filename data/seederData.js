@@ -9,4 +9,4 @@ const productItems = [
         image: 'https://media.direct.playstation.com/is/image/sierialto/PS5-front-with-dualsense'
     }
 ]
-module.exports = products
+module.exports = productItems

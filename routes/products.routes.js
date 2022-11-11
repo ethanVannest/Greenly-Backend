@@ -3,7 +3,7 @@ const router = express.Router()
 
 const ctrls = require('../controllers/Products.ctrls')
 
-router.get('/', ctrls.index)
+router.get('/products', ctrls.index)
 
 router.get('/:id', ctrls.show)
 

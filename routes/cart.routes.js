@@ -3,9 +3,9 @@ const router = express.Router()
 
 const ctrls = require('../controllers')
 
-router.get('/', ctrls.cart.get)
-router.post('/', ctrls.cart.create)
-router.delete('/:id', ctrls.cart.destroy)
-router.put('/:id', ctrls.cart.update)
+router.get('/cart', ctrls.cart.get)
+router.post('/create', ctrls.cart.create)
+router.delete('/remove/:id', ctrls.cart.destroy)
+router.put('/updateCart/:id', ctrls.cart.update)
 
 module.exports = router

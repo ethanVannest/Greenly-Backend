@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000
 
 connectDB();
 
-app.use('/api/products', routes )
+app.use('/', routes )
 
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}` )

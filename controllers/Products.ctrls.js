@@ -36,7 +36,7 @@ const update = (req, res) => {
     db.Products.findByIdAndUpdate(
         req.params.id,
         {
-            $set: req.body
+            $set: req.body 
         },
         { new: true }, 
         (error, updatedProducts) => {

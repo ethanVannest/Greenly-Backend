@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const ctrls = require('../controllers/Cart.ctrls')
-const { cart } = require('./index.routes')
+const ctrls = require('../controllers')
 
-router.get('/cart', ctrls.cart.get)
+
+router.get('/cart', ctrls.cart.index)
 router.post('/create', ctrls.cart.create)
-router.delete('/remove/:id', ctrls.cart.destroy)
-router.put('/updateCart/:id', ctrls.cart.update)
+router.delete('/remove/:id', ctrls.cart.remove)
+router.put('/updateCart/:id' , ctrls.cart.update)
 
 module.exports = router;

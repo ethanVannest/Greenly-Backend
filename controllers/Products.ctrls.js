@@ -1,5 +1,5 @@
 const Product = require('../models/Products')
-const db = require('../models/Products')
+const db = require('../models')
 
 
 const index = async (req, res) => {

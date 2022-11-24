@@ -39,7 +39,7 @@ const update = (req, res) => {
     )
 }
 
-const destory = (req, res) => {
+const remove = (req, res) => {
     db.Cart.findByIdAndDelete(req.params.id,
         (error, deleteCart) => {
             if (error)
@@ -56,5 +56,5 @@ module.exports = {
     index,
     create,
     update,
-    destory
+    remove
 }

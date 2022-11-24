@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
+const router = express.Router()
 const connectDB = require('./config/db.connection') 
 const routes = require('./routes')
+
 const cors = require('cors')
 
 app.use(express.json());
@@ -22,3 +24,5 @@ app.use('/api/products', routes.products )
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}` )
 })
+
+module.exports = router
